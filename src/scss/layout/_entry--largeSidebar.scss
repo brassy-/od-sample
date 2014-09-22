@@ -1,0 +1,36 @@
+
+// with sidebar
+.entry--largeSidebar {
+    .entry__header-inner {
+        @media #{$large-up} {
+            @include grid-column(
+                $columns:12,
+                $float:left
+            );
+            padding:0 rem-calc(30);
+            max-width:100%;
+            margin-right:0;
+        }
+    }
+
+    .entry__summary {
+        @media #{$large-up} {
+            padding:0 1rem;
+            @include grid-column(
+                $columns:4,
+                $collapse:false,
+                $float:right
+            );
+        }
+    }
+
+    .entry__content {
+        @media #{$large-up} {
+            @include grid-column(
+                $columns:8,
+                $collapse:false,
+                $float:left
+            );
+        }
+    }
+}

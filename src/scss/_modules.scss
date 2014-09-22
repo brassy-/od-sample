@@ -1,0 +1,159 @@
+@mixin bg-asphalt() {
+    background:$blueDD;
+    color:$greyD;
+
+    @include headings() {
+        color:$grey;
+    }
+
+    a {
+        color:$white;
+        &:hover {
+            color:$greyD;
+        }
+    }
+}
+
+@mixin bg-white() {
+    background:$body-bg;
+    color:$body-font-color;
+    a {
+        color:$anchor-font-color;
+        &:hover {
+            color:$anchor-font-color-hover;
+        }
+    }
+}
+
+%nodotList {
+    list-style:none;
+    margin:0;
+}
+
+
+
+// organizer
+
+.organizer {
+    @include grid-column(12);
+    background:$grey;
+    padding:1rem 1rem 2rem;
+    text-align:center;
+
+    @media #{$medium-up} {
+        text-align:left;
+        padding:1rem;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    }
+}
+
+.organizer__img {
+    max-width:40%;
+    max-height:8rem;
+
+    @media #{$medium-up} {
+        max-width:30%;
+        max-height:5rem;
+    }
+}
+
+.organizer__title {
+    @media #{$medium-up} {
+        display:none;
+
+        font-size:rem-calc(18);
+        float:left;
+        width:50%;
+    }
+}
+
+
+// table
+
+.table__label {
+    color:$greyDD;
+    font-weight:700;
+    text-transform:uppercase;
+    font-size:rem-calc(12);
+}
+
+// buttons
+
+.button--secondary {
+    @extend .bg-yellow;
+    text-transform:uppercase;
+    font-size:rem-calc(14);
+    letter-spacing:1px;
+
+    &:hover {
+        background-color: darken($yellow, 10);
+    }
+
+    .typcn {
+        font-size:1rem;
+    }
+}
+
+// attachment
+
+.attachments {
+    @extend %nodotList;
+    margin:0;
+    background:$grey;
+    border-bottom:3px solid $greyD;
+    padding-bottom: .75rem;
+
+    @media #{$large-up} {
+        margin:3rem 0;
+    }
+}
+
+.attachment {
+    @include entryCol(); 
+    font-size:rem-calc(14);
+    padding:0 1rem;
+    border-bottom:1px solid $greyD;
+    .typcn {
+        font-size:rem-calc(37);
+        color:$secondary-color;
+    }
+
+    &:last-child {
+        border:medium none;
+    }
+}
+
+.attachment__link {
+    color:$blueD;
+}
+
+.attachment__type {
+    font-size:rem-calc(12);
+    // color:$turquoise;
+}
+
+//search
+
+.searchform {
+    overflow: hidden;
+    padding: 1.5rem 1rem 0;
+}
+
+.search--wide {
+    @include entryCol();
+    @media #{$large-up} {
+        padding:0 1rem;
+    }
+    overflow: hidden;
+}
+
+
+// pagination
+ul.pagination {
+    display:inline-block;
+    //border-top: 2px solid $yellow;
+    padding-top: .5rem;
+    margin-top:1rem;
+}

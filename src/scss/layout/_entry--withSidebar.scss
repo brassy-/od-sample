@@ -1,0 +1,51 @@
+
+// with sidebar
+.entry--withSidebar {
+
+    .entry__header-inner {
+        @media #{$medium-up} {
+            @include grid-column(
+                $columns:7,
+                $float:right
+            );
+            padding:0 rem-calc(30);
+            max-width:100%;
+            margin-right:0;
+        }
+    }
+
+    .entry__summary {
+        @media #{$medium-up} {
+            @include grid-column(
+                $columns:5,
+                $collapse:true
+            );
+        }
+
+        @media #{$large-up} {
+            padding:0 1rem;
+            @include grid-column(
+                $columns:5,
+                $collapse:false
+            );
+        }
+    }
+
+    .entry__content {
+        @media #{$medium-up} {
+            @include grid-column(
+                $columns:7,
+                $collapse:true,
+                $float:right
+            );
+        }
+
+        @media #{$large-up} {
+            @include grid-column(
+                $columns:7,
+                $collapse:false,
+                $float:right
+            );
+        }
+    }
+}

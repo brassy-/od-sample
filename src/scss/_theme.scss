@@ -1,0 +1,55 @@
+
+%headerFont {
+    font-family:$header-font-family;
+    font-weight:300;
+}
+
+.bg-sample {
+    background:$sample;
+    //@extend .gradient-sample;
+    color:$grey !important;
+
+    @include headings() {
+        color:$grey;  
+    }
+}
+
+.bg-webinar {
+    background:$webinar;
+    //@extend .gradient-webinar;
+    color:$white !important;
+
+    @include headings() {
+        color:$grey;  
+    }
+}
+
+.bg-profile {
+    background-color:$totSky;
+    color:$grey;
+
+    @include headings() {
+        color:$grey;  
+    }
+}
+
+.gradient-sample {
+	background:linear-gradient(-45deg, $blueD, $blueDD);
+}
+
+.gradient-webinar {
+	background:linear-gradient(-45deg, $turquoise, $green);
+}
+
+.gradient-services--main {
+	background:linear-gradient(-45deg, $greyDD, $black);
+}
+
+.gradient-services--side {
+	background:linear-gradient(-45deg, $grey, $greyD);
+}
+
+.bg-yellow {
+    background-color: $yellow;
+    color: $greyDD;
+}

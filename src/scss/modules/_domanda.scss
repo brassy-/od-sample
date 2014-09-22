@@ -1,0 +1,93 @@
+.domanda {
+    @include entryCol();
+    padding:1rem;
+    margin-top:1rem;
+    margin-bottom:1rem;
+    border-bottom: 3px solid $grey;
+    a {
+        color:$totSky;
+    }
+}
+
+.domanda__text {
+    font-size:1.125rem;
+    line-height: 1.2rem;
+    font-weight: 300;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.domanda__answer {
+    position:relative;
+    margin-bottom:1rem;
+}
+
+.domanda__answerSmall {
+    font-size:rem-calc(12);
+    color:$greyDD;
+}
+
+.domanda__textarea {
+    min-height:8rem;
+}
+
+.domanda__answer--radio,
+.domanda__answer--check {
+    position:relative;
+    clear:both;
+    .domanda__input {
+        //@include position(absolute, top .25rem left 0);
+        display:none;
+    }
+
+    .domanda__label {
+        margin:0 0 0 1.5rem;
+        &:before {
+            border: 2px solid $greyD;
+            content: '';
+            display: block;
+            height: 1rem;
+            left: 0;
+            position: absolute;
+            width: 1rem;
+            top: .25rem;
+        }
+        
+        &:hover::before {
+            border-color:$totSky;
+        }
+
+        &:hover:active:before {
+            background:$totSky;
+        }
+
+        &:after {
+            content:"";
+        }
+    }
+
+    input[type=radio]:checked +.domanda__label:after,
+    input[type=checkbox]:checked +.domanda__label:after {
+        background:$totSky;
+        height: rem-calc(10);
+        left: rem-calc(3);
+        position: absolute;
+        top: rem-calc(7);
+        width: rem-calc(10);
+    }
+    
+}
+
+.domanda__answer--radio {
+    .domanda__label:before {
+        //top:0.25rem;
+        border-radius: 1.25rem;
+    }
+
+    input[type=radio]:checked +.domanda__label:after {
+        border-radius:rem-calc(10);
+    }
+}
+
+
+

@@ -1,0 +1,68 @@
+@mixin center-el() {
+    margin-left: auto;
+    margin-right:auto;
+    float:none !important;
+}
+
+
+@mixin img-container() {
+    display:block;
+    overflow: hidden;
+    border-radius:50%;
+    position:relative;
+    &:before {
+        content:"";
+        @include position(absolute, top 0 left 0 right 0 bottom 0);
+        border-radius:50%;
+        box-shadow:0 0 0 7px rgba(255, 255, 255, 0.6) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+}
+
+// headings
+@mixin headings($from: 1, $to: 6){
+    @for $i from $from through $to{
+      h#{$i}{
+        @content
+      }
+    }
+}
+// hide
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// cleafix 
+%clearfix {
+  *zoom: 1;
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+// position
+@mixin position($position, $args) {
+    position: $position;
+    $offsets: top right bottom left;
+
+    @each $o in $offsets {
+        $i: index($args, $o);
+
+        @if $i 
+        and $i + 1 <= length($args) 
+        and type-of( nth($args, $i + 1) ) == number {
+            #{$o}: nth($args, $i + 1);
+        }
+    }
+}

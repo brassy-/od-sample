@@ -1,0 +1,39 @@
+---
+title: samples
+heading: 'Elenco samples'
+---
+
+{{> header }}
+<article class="entry entry--archive clearfix">
+
+    <header class="entry__header bg-sample">
+        <div class="entry__row">
+            <div class="entry__header-inner">
+                <p class="entry__type">
+                    <span class="typcn typcn-mortar-board"></span> samples
+                </p>
+                <h1 class="entry__title">
+                    {{ heading }}
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="search--wide">
+        {{> search }}
+    </section>
+
+    <div class="bg-sample">
+        <div class="entry__row entry__row--archive text-center">
+            {{> samples}} 
+            {{> samples}}
+
+            <div class="entry__meta bg-sample">
+                {{> pagination }}
+            </div> 
+        </div>
+
+    </div>
+
+</article>
+{{> footer }}

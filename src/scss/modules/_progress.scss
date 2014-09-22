@@ -1,0 +1,30 @@
+.progress {
+    @extend %nodotList;
+    font-size:rem-calc(12);
+}
+
+.progress__item {
+    display: inline-block;
+    display: inline-block;
+    width: 1.75rem;
+    height: 1.75rem;
+    text-align: center;
+    background: rgba($white,0.6);
+    border-radius: 50%;
+    margin:1rem .75rem 0 0;
+    color:$primary-color;
+}
+
+.flexbox .progress__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress__item--current {
+    background: rgba($orange,1);
+}
+
+.progress__item--complete {
+    background: rgba($white,1);
+}

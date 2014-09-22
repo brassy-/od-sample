@@ -1,0 +1,15 @@
+.entry.entry--singleRow {
+    .entry__header-inner {
+        @media #{$large-up} {
+            max-width:36rem;
+            text-align:left;
+        }
+    }
+    .entry__content {
+        @media #{$large-up} {
+            @include center-el(); 
+            max-width:38rem;
+            padding:0;
+        }
+    }
+}

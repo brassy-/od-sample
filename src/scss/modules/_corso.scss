@@ -1,0 +1,200 @@
+// samples - sample's home container
+.samples {
+    @include grid-column(
+        $columns:12,
+        $collapse:true
+    );
+    margin:0;
+    padding:2rem 0rem;
+    @include bg-asphalt();
+
+    @media #{$medium-up} {
+        padding:2rem 0 2rem 1rem; 
+    }
+}
+
+.samples__container {
+   @media #{$medium-up} {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y:hidden;
+   }
+}
+
+.samples__inner {
+    white-space: nowrap;
+}
+
+.samples__title {
+    text-align:center;
+
+    @media #{$medium-up} {
+        text-align:left;
+    }
+
+    .typcn-business-card {
+        padding-right: 0.25rem;
+    }
+}
+
+
+// sample
+.sample {
+    @include grid-column(
+        $columns:12,
+        $collapse:true,
+        $center:true
+    );
+    overflow: hidden;
+    width: 26rem;
+    max-width:100%;
+    padding:1rem 0 1rem .5rem;
+    background:$grey;
+    border-bottom:3px solid $greyD;
+    margin:2rem auto;
+
+    @media #{$medium-up} {
+        display:inline-block;
+        width:20rem;
+        margin-right:1rem;
+    }
+
+    @media #{$medium-up} {
+        width:26rem;
+    }
+}
+
+.sample--enroll {
+    border-bottom:3px solid $enroll;
+    .sample__button {
+        background:$enroll;
+        &:hover {
+            background:darken($enroll, 5);
+            color:white;
+        }
+    }
+}
+
+.sample--completed {
+    border-bottom:3px solid $completed;
+    .sample__button {
+        background:$completed;
+        &:hover {
+            background:darken($completed, 5);
+            color:white;
+        }
+    }
+}
+
+.sample--notActive {
+    background: $notActive;
+    .sample__button {
+        background:$grey;
+        color:$black;
+        &:hover {
+            background:$white;
+            color:$black;
+        }
+    }
+
+}
+
+
+.sample__img-container {
+    @include grid-column(
+        $columns:5,
+        $collapse:true
+    );
+   @include img-container();
+   height:41.66667%; 
+}
+
+.sample__inner {
+     @include grid-column(
+        $columns:7
+    );
+}
+
+.sample__title {
+    font-size:1rem;
+    color:$blueDD !important;
+    white-space: normal;
+    text-align:left;
+}
+
+.sample__button {
+    margin-bottom:0;
+    .typcn {
+        font-size: rem-calc(18);
+    }
+}
+
+
+// flexbox
+
+.flexbox {
+
+    .sample {
+        display:flex;
+
+        @media #{$medium-up} {
+            display:inline-flex;
+        }
+    }
+
+    .sample__img-container,
+    .sample__inner {
+        flex:1;
+    }
+
+    .sample__img {
+        width:100%;
+    }
+
+    .sample__inner {
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        padding-top: 1rem;
+        padding-bottom:1rem;
+    }
+}
+
+// webinar
+
+
+.samples--webinar {
+    background-color:$green;
+}
+
+
+// samplesList
+
+.tabs {
+    margin-top:4rem;
+}
+
+.samplesList {
+    @include center-el();
+    text-align:center;
+    padding:1rem !important;
+    overflow: hidden;
+
+    @media #{$medium-up} {
+        margin:0 auto 2rem;
+        text-align:left;
+        max-width:100%;
+    }
+
+    .sample {
+        margin:0 auto 1rem;
+        @media #{$medium-up} {
+            width:49.5%;
+            //max-width:26rem;
+            margin:.5rem auto;
+        }
+    }
+}
+
+
+
