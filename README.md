@@ -15,6 +15,7 @@ Grunt, Bower, Libsass
 - $ bower install && npm install
 - $ grunt server 
 - go to localhost:9000
+- save a .hbs file
 
 ## Tips
 
