@@ -1,6 +1,6 @@
-# TravelOpenTraining
+# Sample for OD Project
 
-TravelOpenTraining - Assemble / Foundation Prototype
+A sample project - Assemble / Foundation Prototype
 
 Author: MCED(mced.it)
 
